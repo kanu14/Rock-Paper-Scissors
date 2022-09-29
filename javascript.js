@@ -1,52 +1,73 @@
 
-choices = ['rock', 'paper', 'scissors']
+const choices = ['rock', 'paper', 'scissors'];
 
 function getComputerChoice () {
     return choices[Math.floor(Math.random() * choices.length)]
 }
 
-playerSelection = prompt().toLowerCase();
-
+const playerSelection = prompt().toLowerCase();
 const computerSelection = getComputerChoice();
 
-// playerScore = 0;
-// compScore = 0;
+let playerScore = 0;
+let compScore = 0;
 
 function playRound(playerSelection, computerSelection) {
     playerScore = 0;
     compScore = 0;
     if (playerSelection == 'rock' && computerSelection == 'scissors') {
-        return playerScore ++
-        console.log('You win! Rock beats scissors')
+        playerScore ++;
+        return ('You win! Rock beats scissors');
     }   else if (playerSelection == 'rock' && computerSelection == 'paper') {
-        return compScore ++
-        console.log('You lose! Rock beats paper')
+        compScore ++;
+        return ('You lose! Rock beats paper');
     }   else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-        return compScore ++
-        console.log('You lose! Paper beats scissors')
+        compScore ++;
+        return ('You lose! Paper beats scissors');
     }   else if (playerSelection == 'paper' && computerSelection == 'rock') {
-        return playerScore ++
-        console.log('You win! Paper beats rock')
+        playerScore ++;
+        return ('You win! Paper beats rock')
     }   else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-        return playerScore ++
-        console.log('You win! Scissors beats paper')
+        playerScore ++;
+        return ('You win! Scissors beats paper')
     }   else if (playerSelection == 'scissors' && computerSelection == 'rock') {
-        return compScore ++
-        console.log('You lose! Scissors beats rock')
+        compScore ++;
+        return ('You lose! Scissors beats rock')
     }   else if (playerScore == computerSelection) {
-        return playRound()
+        return ('Draw');
+    }   
+}
+
+for (let i = 0; i < 5; i++) {
+    if (playerScore < 4 && compScore < 4 ){
+    playRound()
     }
 }
 
-function game() {
-    if (playerScore < 4 && compScore < 4) {
-        for (let i = 0; i < 5; i++) {
-            }    playRound()
-    } else ('Game Over')
-}
+// function game () {
+//     playRound
+// }
+
+// for (let i = 0; i < 5; i++) {
+//     while (playerScore < 4 && compScore < 4) {
+//         playRound(playerSelection,computerSelection)
+//     }
+// }
 
 
+// while (playerScore < 4 && compScore < 4) {
+//     playRound(playerSelection,computerSelection)
+// }
 
+// function game() {
+//     while (playerScore < 4 && compScore < 4) {
+        
+//         playRound(playerSelection,computerSelection)
+//         }
+        
+//     }
+
+
+// game ()
 
 
 console.log(playRound(playerSelection,computerSelection));
