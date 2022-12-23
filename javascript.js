@@ -47,10 +47,13 @@ function playRound(playerSelection, computerSelection) {
 
 
 
-for (let i = 0; i < 5; i++) {
+function game() {
+    for (let i = 0; i < 5; i++) {
     playRound();
-    
+    }
 }
+
+game()
 
     console.log(`Player Score = ${playerScore}; 
     Computer Score = ${compScore}`);
